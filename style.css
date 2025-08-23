@@ -1,6 +1,6 @@
 
 body {
-    margin: 0px;
+    margin: 0;
     background-color: antiquewhite;
 }
 
@@ -54,4 +54,15 @@ body {
 .horizontal {
     flex: 1 1 0;
     border: 1px solid black;
+}
+
+@keyframes mambo {
+    0% {width: 50px}
+    100% {width: 800px}
+}
+
+.mambo-animated{
+    animation-name: mambo;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
 }

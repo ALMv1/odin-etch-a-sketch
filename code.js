@@ -57,9 +57,27 @@ clearBtn.setAttribute("class", "button");
 clearBtn.textContent = "Clear"
 clearBtn.addEventListener("click", () => generateGrid(size));
 
+const mambo = document.createElement("img");
+const mamboAudio = new Audio("super-ultra-secret/ei-ei-ei-ei-mun.mp3");
+
+mambo.setAttribute("src", "super-ultra-secret/uma-musume.gif");
+mambo.setAttribute("width", "50px");
+mambo.addEventListener("mouseover", () => {
+    mambo.setAttribute("class", "mambo-animated")
+    mamboAudio.currentTime = 0;
+    mamboAudio.play();
+});
+mambo.addEventListener("mouseleave", () => {
+    mambo.setAttribute("class", "")
+    mamboAudio.pause();
+});
+
+
 // display elements
 
+document.body.appendChild(mamboAudio)
 document.body.appendChild(ui);
+ui.appendChild(mambo);
 ui.appendChild(title);
 ui.appendChild(options);
 options.appendChild(sizeBtn)
