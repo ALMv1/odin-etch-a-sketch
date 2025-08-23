@@ -1,21 +1,29 @@
 function generateGrid(size) {
     grid.innerHTML = "";
     for (let i = 0; i < size; i++) {
+
         const vertical = document.createElement("div");
         vertical.setAttribute("class", "vertical");
         grid.appendChild(vertical);
+        
         for (let i = 0; i < size; i++) {
             const horizontal = document.createElement("div");
             horizontal.setAttribute("class", "horizontal");
             vertical.appendChild(horizontal);
-            horizontal.addEventListener("mouseover", () => horizontal.style.backgroundColor = color);
+            horizontal.addEventListener("mouseover", () => {
+                if (eraseMode){
+                    horizontal.style.backgroundColor = "white";
+                } else {
+                    horizontal.style.backgroundColor = color
+                }
+            });
         }
     }
 }
 
 function setGrid(){
     size = prompt("Enter a number between 0-100:");
-    while (size > 100 && size < 1 ){
+    while (size > 100 || size < 1 ){
         size = prompt("Invalid number. Please enter a number between 0-100");
     }
 
@@ -57,6 +65,20 @@ clearBtn.setAttribute("class", "button");
 clearBtn.textContent = "Clear"
 clearBtn.addEventListener("click", () => generateGrid(size));
 
+// additional settings
+
+const eraseBtn = document.createElement("button");
+eraseBtn.textContent = "Erase"
+eraseBtn.setAttribute("class", "button")
+let eraseMode = false
+
+eraseBtn.addEventListener("click", () => {
+    eraseMode = !eraseMode;
+    eraseBtn.classList.toggle("active")
+})
+
+// mambo
+
 const mambo = document.createElement("img");
 const mamboAudio = new Audio("super-ultra-secret/ei-ei-ei-ei-mun.mp3");
 
@@ -82,6 +104,7 @@ ui.appendChild(title);
 ui.appendChild(options);
 options.appendChild(sizeBtn)
 options.appendChild(clearBtn);
+options.appendChild(eraseBtn);
 document.body.appendChild(container);
 container.appendChild(grid);
 
