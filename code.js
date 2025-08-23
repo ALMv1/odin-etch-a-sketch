@@ -13,7 +13,12 @@ function generateGrid(size) {
             horizontal.addEventListener("mouseover", () => {
                 if (eraseMode){
                     horizontal.style.backgroundColor = "white";
+                } else if (rgbMode){
+                    const randomColor = Math.floor(Math.random() * rgbArr.length)
+                    color = rgbArr[randomColor]
+                    horizontal.style.backgroundColor = color
                 } else {
+                    color = "red"
                     horizontal.style.backgroundColor = color
                 }
             });
@@ -52,6 +57,10 @@ const title = document.createElement("h1");
 title.setAttribute("class", "title");
 title.textContent = "Etch-a-sketch";
 
+const author = document.createElement("h3");
+author.setAttribute("class", "author");
+author.textContent = "by ALMv";
+
 const options = document.createElement("div");
 options.setAttribute("class", "options");
 
@@ -77,13 +86,26 @@ eraseBtn.addEventListener("click", () => {
     eraseBtn.classList.toggle("active")
 })
 
+const rgbBtn = document.createElement("button");
+rgbBtn.setAttribute("class", "button");
+rgbBtn.textContent = "RGB Mode";
+let rgbMode = false;
+
+rgbBtn.addEventListener("click", () => {
+    rgbMode = !rgbMode;
+    rgbBtn.classList.toggle("active")
+})
+
+
+const rgbArr = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
 // mambo
 
 const mambo = document.createElement("img");
 const mamboAudio = new Audio("super-ultra-secret/ei-ei-ei-ei-mun.mp3");
 
 mambo.setAttribute("src", "super-ultra-secret/uma-musume.gif");
-mambo.setAttribute("width", "50px");
+mambo.setAttribute("width", "30px");
 mambo.addEventListener("mouseover", () => {
     mambo.setAttribute("class", "mambo-animated")
     mamboAudio.currentTime = 0;
@@ -101,10 +123,12 @@ document.body.appendChild(mamboAudio)
 document.body.appendChild(ui);
 ui.appendChild(mambo);
 ui.appendChild(title);
+ui.appendChild(author);
 ui.appendChild(options);
 options.appendChild(sizeBtn)
 options.appendChild(clearBtn);
 options.appendChild(eraseBtn);
+options.appendChild(rgbBtn);
 document.body.appendChild(container);
 container.appendChild(grid);
 

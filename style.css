@@ -9,11 +9,21 @@ body {
     flex-direction: column;
 }
 
+.title, .author {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
 .title{
     display: flex;
     justify-content: center;
     font-size: 50px;
     margin-top: 10px;
+    margin-bottom: -20px;
+}
+
+.author {
+    text-align: center;
+    margin-bottom: 45px;
 }
 
 .options {
@@ -61,7 +71,7 @@ body {
 }
 
 @keyframes mambo {
-    0% {width: 50px}
+    0% {width: 30px}
     100% {width: 800px}
 }
 
