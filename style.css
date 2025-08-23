@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    display: flex;
+    border: 10px solid deepskyblue;
+    height: 960px;
+    width: 960px;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+
+.horizontal {
+    flex: 1 1 0;
+    border: 1px solid black;
+}
