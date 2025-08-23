@@ -1,3 +1,28 @@
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #c67d45;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+
+}
+
+.options {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.button {
+
+}
+
 .container {
     display: flex;
     justify-content: center;
