@@ -53,6 +53,9 @@ body {
 .grid {
     display: flex;
     border: 5px solid deepskyblue;
+    animation-name: rgbBorder;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
     height: 960px;
     width: 960px;
     background-color: white;
@@ -73,6 +76,15 @@ body {
 @keyframes mambo {
     0% {width: 30px}
     100% {width: 800px}
+}
+
+@keyframes rgbBorder{
+    0% {border-color: red}
+    15% {border-color: orange}
+    30% {border-color: yellow}
+    50% {border-color: green}
+    75% {border-color: blue}
+    100% {border-color: indigo}
 }
 
 .mambo-animated{
