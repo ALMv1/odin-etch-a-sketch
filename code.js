@@ -7,10 +7,12 @@ function generateSquares(side) {
             const horizontal = document.createElement("div");
             horizontal.setAttribute("class", "horizontal");
             vertical.appendChild(horizontal)
+            horizontal.addEventListener("mouseover", () => horizontal.style.backgroundColor = color);
         }
     }
 }
 
+let color = "red"
 let side = 16;
 
 const container = document.createElement("div");
