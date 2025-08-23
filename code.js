@@ -54,7 +54,8 @@ sizeBtn.addEventListener("click", setGrid);
 
 const clearBtn = document.createElement("button");
 clearBtn.setAttribute("class", "button");
-clearBtn
+clearBtn.textContent = "Clear"
+clearBtn.addEventListener("click", () => generateGrid(size));
 
 // display elements
 
@@ -62,6 +63,7 @@ document.body.appendChild(ui);
 ui.appendChild(title);
 ui.appendChild(options);
 options.appendChild(sizeBtn)
+options.appendChild(clearBtn);
 document.body.appendChild(container);
 container.appendChild(grid);
 
