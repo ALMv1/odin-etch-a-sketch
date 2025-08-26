@@ -103,6 +103,7 @@ const rgbArr = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
 const mambo = document.createElement("img");
 const mamboAudio = new Audio("super-ultra-secret/ei-ei-ei-ei-mun.mp3");
+mamboAudio.volume = 0.2;
 
 mambo.setAttribute("src", "super-ultra-secret/uma-musume.gif");
 mambo.setAttribute("width", "30px");
